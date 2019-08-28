@@ -1,0 +1,80 @@
+[submodule "bundle/bundle/ag.vim"]
+	path = bundle/bundle/ag.vim
+	url = https://github.com/rking/ag.vim
+	ignore = untracked
+[submodule "bundle/bundle/bundle/a.vim"]
+	path = bundle/bundle/bundle/a.vim
+	url = https://github.com/rking/ag.vim
+	ignore = untracked
+[submodule "bundle/ag.vim"]
+	path = bundle/ag.vim
+	url = https://github.com/rking/ag.vim
+	ignore = untracked
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/w0rp/ale.git
+	ignore = untracked
+[submodule "bundle/a.vim"]
+	path = bundle/a.vim
+	url = https://github.com/vim-scripts/a.vim.git
+	ignore = untracked
+[submodule "bundle/ctrlp.vim"]
+	path = bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+	ignore = untracked
+[submodule "bundle/deoplete.nvim"]
+	path = bundle/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim.git
+	ignore = untracked
+[submodule "bundle/lightline-buffer"]
+	path = bundle/lightline-buffer
+	url = https://github.com/taohexxx/lightline-buffer.git
+	ignore = untracked
+[submodule "bundle/lightline.vim"]
+	path = bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
+	ignore = untracked
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+	ignore = untracked
+[submodule "bundle/nvim-gdb"]
+	path = bundle/nvim-gdb
+	url = https://github.com/sakhnik/nvim-gdb.git
+	ignore = untracked
+[submodule "bundle/papercolor-theme"]
+	path = bundle/papercolor-theme
+	url = https://github.com/NLKNguyen/papercolor-theme.git
+	ignore = untracked
+[submodule "bundle/suda.vim"]
+	path = bundle/suda.vim
+	url = https://github.com/lambdalisue/suda.vim.git
+	ignore = untracked
+[submodule "bundle/vim-bookmarks"]
+	path = bundle/vim-bookmarks
+	url = https://github.com/MattesGroeger/vim-bookmarks.git
+	ignore = untracked
+[submodule "bundle/vim-clang-format"]
+	path = bundle/vim-clang-format
+	url = https://github.com/rhysd/vim-clang-format.git
+	ignore = untracked
+[submodule "bundle/vim-cursorword"]
+	path = bundle/vim-cursorword
+	url = https://github.com/itchyny/vim-cursorword.git
+	ignore = untracked
+[submodule "bundle/vim-devicons"]
+	path = bundle/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
+	ignore = untracked
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
+	ignore = untracked
+[submodule "bundle/vim-grammarous"]
+	path = bundle/vim-grammarous
+	url = https://github.com/rhysd/vim-grammarous.git
+	ignore = untracked
+[submodule "bundle/vim-wordmotion"]
+	path = bundle/vim-wordmotion
+	url = https://github.com/chaoren/vim-wordmotion.git
+	ignore = untracked
