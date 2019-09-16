@@ -78,3 +78,6 @@
 	path = bundle/vim-wordmotion
 	url = https://github.com/chaoren/vim-wordmotion.git
 	ignore = untracked
+[submodule "bundle/echodoc.vim"]
+	path = bundle/echodoc.vim
+	url = https://github.com/Shougo/echodoc.vim.git
