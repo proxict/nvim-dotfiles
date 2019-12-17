@@ -1,0 +1,7 @@
+#!/bin/sh
+
+for f in */; do
+    pushd $f > /dev/null && echo "Updating $f"
+    git pull
+    popd > /dev/null
+done
