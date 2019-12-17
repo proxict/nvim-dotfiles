@@ -87,6 +87,9 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
         autocmd FileType * setlocal formatoptions-=cro
     augroup END
 
+" Add <> brackets to the list of matching pairs
+    set matchpairs+=<:>
+
 " Don't display @ when a line doesn't fit on screen
     set display+=lastline
 
@@ -118,6 +121,13 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     set scrolloff=5 " scroll lines above/below cursor
     set sidescrolloff=5
 
+" When wrapping is allowed, move the cursor between display lines
+" rather than physical lines
+    noremap <silent> k gk
+    noremap <silent> j gj
+    noremap <silent> 0 g0
+    noremap <silent> $ g$
+
 " Load other settings
     source $VIMHOME/settings/get_hl_color.vim
     source $VIMHOME/settings/ale.vim
@@ -133,6 +143,7 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     source $VIMHOME/settings/rainbow.vim
     source $VIMHOME/settings/tabspace.vim
     source $VIMHOME/settings/ctrl_p.vim
+    source $VIMHOME/settings/preserve_line_pos.vim
 
 " Exclude quickfix from buffer list
     augroup qf
@@ -220,24 +231,19 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
 " remember opened buffers in viminfo
 " exec 'set viminfo=%,' . &viminfo
 
+let g:calendar_google_calendar = 1
+" let g:calendar_google_task = 1
+
 " Start searching in project root instead of in CWD
 let g:ag_working_path_mode='r'
 
-" start searching for SCM from Vim's present working directory instead of from current file path
-"let g:CommandTTraverseSCM = 'dir'
-"let g:CommandTWildIgnore=&wildignore
-
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 50
-set completeopt-=preview
-
-let g:echodoc_enable_at_startup = 1
-let g:echodoc#enable_at_startup = 1
-let g:echodoc#type = 'virtual'
+"set completeopt-=preview
 
 let g:pathogen_blacklist = []
 " call add(g:pathogen_blacklist, 'directoryNameInBundleDir')
-call add(g:pathogen_blacklist, 'tve.vim')
+"call add(g:pathogen_blacklist, 'deoplete.nvim')
 execute pathogen#infect()
 Helptags
 

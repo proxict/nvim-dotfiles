@@ -10,3 +10,6 @@ set hlsearch
 nnoremap <silent> <esc> :let @/ = ""<return><esc>
 nnoremap <silent> <esc>^[ <esc>^[
 
+" Case sensitive
+nnoremap * /\C\<<C-R>=expand('<cword>')<CR>\><CR>
+nnoremap # ?\C\<<C-R>=expand('<cword>')<CR>\><CR>
