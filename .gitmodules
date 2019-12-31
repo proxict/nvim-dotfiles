@@ -8,7 +8,7 @@
 	ignore = untracked
 [submodule "bundle/a.vim"]
 	path = bundle/a.vim
-	url = https://github.com/vim-scripts/a.vim.git
+	url = https://github.com/proxict/a.vim.git
 	ignore = untracked
 [submodule "bundle/ctrlp.vim"]
 	path = bundle/ctrlp.vim
