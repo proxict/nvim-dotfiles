@@ -175,9 +175,7 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     endif
 
 " Some useful mappings
-    " Disable q & Q, it only causes trouble anyways
-    map q <c-w>z
-    map Q <nop>
+    map Q <c-w>z
 
     " Close all buffers
     if !exists(':Q')
