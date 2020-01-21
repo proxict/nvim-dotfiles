@@ -2,6 +2,6 @@
 
 for f in */; do
     pushd $f > /dev/null && echo "Updating $f"
-    git pull
+    git pull origin master
     popd > /dev/null
 done
