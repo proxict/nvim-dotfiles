@@ -5,16 +5,18 @@
 "   \_/ |_|_| |_| |_|_|  \___|
 
 " ===================================================== "
-" In order for this to work, one needs to create a 
-" symlink /usr/share/nvim/site pointing to /etc/nvim
+" This init.vim should be located in /etc/nvim/
+" In order for this to work, a symlink needs to be
+" created in /usr/share/nvim/site pointing to /etc/nvim
 " and symlink /usr/share/nvim/sysinit.vim pointing to
 " /etc/nvim/init.vim. In newer neovim versions the
 " symlink is called archlinux.vim instead of sysinit.vim
-" To install ruby gem system-wide, do
-"  "gem install --no-user-install neovim"
 " ===================================================== "
 scriptencoding utf-8
 let $VIMHOME= '/etc/nvim'
+
+set backupdir=~/.nvim/backup//
+set directory=~/.nvim/swap//
 
 let mapleader = ','
 " Keep backward f search, remapping it to <Leader>;
@@ -70,10 +72,6 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
 
     set splitright
     set cursorline
-
-" Change backup and swap files directories
-    set backupdir=$VIMHOME/backup//
-    set directory=$VIMHOME/swap//
 
 " Enable command completion
     set wildmenu
