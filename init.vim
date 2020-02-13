@@ -235,7 +235,7 @@ let g:ag_working_path_mode='r'
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 50
-"set completeopt-=preview
+set completeopt-=preview
 
 let g:pathogen_blacklist = []
 " call add(g:pathogen_blacklist, 'directoryNameInBundleDir')
