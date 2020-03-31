@@ -142,6 +142,7 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     source $VIMHOME/settings/tabspace.vim
     source $VIMHOME/settings/ctrl_p.vim
     source $VIMHOME/settings/preserve_line_pos.vim
+    source $VIMHOME/settings/git.vim
 
 " Exclude quickfix from buffer list
     augroup qf
