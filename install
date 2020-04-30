@@ -3,6 +3,5 @@
 mkdir -p ~/.nvim/backup
 mkdir -p ~/.nvim/swap
 
-ln -sf /etc/nvim/init.vim /usr/share/nvim/archlinux.vim
-ln -sf /etc/nvim/init.vim /usr/share/nvim/sysinit.vim
-ln -sf /etc/nvim/ /usr/share/nvim/site
+[ ! -L /usr/share/nvim/site ] && ln -s /etc/nvim /usr/share/nvim/site
+[ -f /etc/xdg/nvim/sysinit.vim ] && sed -i 's|^source .*.vim$|source /etc/nvim/init.vim|g' /etc/xdg/nvim/sysinit.vim
