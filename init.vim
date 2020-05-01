@@ -235,7 +235,6 @@ let g:calendar_google_calendar = 1
 let g:ag_working_path_mode='r'
 
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 50
 set completeopt-=preview
 
 let g:pathogen_blacklist = []
@@ -245,6 +244,7 @@ execute pathogen#infect()
 Helptags
 
 call deoplete#custom#source('ale', 'rank', 999)
+call deoplete#custom#option('auto_complete_delay', 50)
 
 set secure
 
