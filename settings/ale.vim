@@ -1,11 +1,5 @@
 scriptencoding utf-8
 
-let g:ale_fixers = {
-    \ 'go': ['gofmt'],
-    \ }
-let g:ale_fix_on_save = 1
-
-let g:ale_cpp_build_dir_names = ['build', '.']
 let g:ale_c_build_dir_names = ['build', '.']
 let g:ale_completion_enabled = 0
 
@@ -22,7 +16,6 @@ let g:ale_sign_info = 'ℹ'
 let g:ale_sign_warning = '⚠'
 
 let g:ale_linters = {
-      \ 'go': ['bingo'],
       \ 'c': ['clangd'],
       \ 'cpp': ['clangd'],
       \ }
