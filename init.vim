@@ -229,6 +229,8 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
 " remember opened buffers in viminfo
 " exec 'set viminfo=%,' . &viminfo
 
+let g:wordmotion_spaces = '-.<>()\[\]{}&*=!+'
+
 let g:calendar_google_calendar = 1
 " let g:calendar_google_task = 1
 
