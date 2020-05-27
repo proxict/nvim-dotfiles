@@ -3,6 +3,7 @@ scriptencoding utf-8
 let g:ale_c_build_dir_names = ['build', '.']
 let g:ale_completion_enabled = 0
 
+let g:ale_c_project_filenames = ['.git/HEAD', 'configure', 'Makefile', 'CMakeLists.txt', 'compile_flags.txt']
 let g:ale_open_list = 0
 let g:ale_set_highlights = 1
 let g:ale_set_loclist = 1
