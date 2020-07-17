@@ -3,3 +3,5 @@ set clipboard=unnamedplus
 " Use Ctrl-C to yank selection to clipboard
 vnoremap <C-c> "+y
 map <C-p> "+P
+
+autocmd VimLeave * call system("xsel -ib", getreg('+'))
