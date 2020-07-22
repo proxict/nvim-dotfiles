@@ -21,6 +21,8 @@ let g:ale_linters = {
       \ 'cpp': ['clangd'],
       \ }
 
+let g:ale_python_flake8_options = '--ignore=E501'
+
 " A little hack to set the same bg color as SignColumn
 let signColumnBgColor = GetHighlightTerm('SignColumn', 'ctermbg')
 exe 'hi ALEErrorSign ctermbg=' . signColumnBgColor . ' ctermfg=DarkRed'
