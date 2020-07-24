@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 for f in */; do
     pushd $f > /dev/null && echo "Updating $f"
