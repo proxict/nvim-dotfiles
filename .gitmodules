@@ -4,7 +4,7 @@
 	ignore = untracked
 [submodule "bundle/ale"]
 	path = bundle/ale
-	url = https://github.com/w0rp/ale.git
+	url = https://github.com/proxict/ale.git
 	ignore = untracked
 [submodule "bundle/a.vim"]
 	path = bundle/a.vim
