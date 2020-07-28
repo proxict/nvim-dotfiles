@@ -177,6 +177,9 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     map Q <c-w>z
     nmap q: <nop>
 
+    " Convert camelCase to snake_case
+    nmap <silent> <Leader>cc :s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g<CR>
+
     " Close all buffers
     if !exists(':Q')
         command Q qa
