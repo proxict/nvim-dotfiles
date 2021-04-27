@@ -198,6 +198,7 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     nmap <silent> <Leader>gd :ALEGoToDefinition<CR>
     nmap <silent> <Leader>i :ALEDetail<CR>
     nmap <silent> <Leader>fr :ALEFindReferences<CR>
+    nmap <silent> <Leader>w :ALEHover<CR>
 
     " ClangFormat
     map <silent> <Leader>cf :ClangFormat<CR>
@@ -232,7 +233,8 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
 " remember opened buffers in viminfo
 " exec 'set viminfo=%,' . &viminfo
 
-let g:wordmotion_spaces = '-.<>()\[\]{}&*=!+'
+let g:wordmotion_spaces = [ '_' ]
+let g:wordmotion_uppercase_spaces = ['-', '.', '<', '>', '(', ')', '[', ']', '{', '}', '&', '*', '=', '!', '+', ';', ':']
 
 let g:calendar_google_calendar = 1
 " let g:calendar_google_task = 1
