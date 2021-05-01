@@ -234,7 +234,7 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
 " exec 'set viminfo=%,' . &viminfo
 
 let g:wordmotion_spaces = [ '_' ]
-let g:wordmotion_uppercase_spaces = ['-', '.', '<', '>', '(', ')', '[', ']', '{', '}', '&', '*', '=', '!', '+', ';', ':']
+let g:wordmotion_uppercase_spaces = ['-', '.', ',', '<', '>', '(', ')', '[', ']', '{', '}', '&', '*', '=', '!', '+', ';', ':', '"']
 
 let g:calendar_google_calendar = 1
 " let g:calendar_google_task = 1
