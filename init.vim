@@ -256,7 +256,7 @@ set completeopt-=preview
 
 let g:pathogen_blacklist = []
 " call add(g:pathogen_blacklist, 'directoryNameInBundleDir')
-"call add(g:pathogen_blacklist, 'deoplete.nvim')
+call add(g:pathogen_blacklist, 'calendar.vim')
 execute pathogen#infect()
 Helptags
 
