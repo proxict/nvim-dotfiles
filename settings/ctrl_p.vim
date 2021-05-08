@@ -1,6 +1,8 @@
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_working_path_mode = 'ra'
 
+call CopyHighlight('Cursor', 'CtrlPPrtCursor')
+
 nmap <Leader>s :CtrlPLine<CR>
 
 " lightline integration
