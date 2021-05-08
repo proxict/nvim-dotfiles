@@ -246,6 +246,10 @@ let g:calendar_google_calendar = 1
 
 " Start searching in project root instead of in CWD
 let g:ag_working_path_mode='r'
+" Disable default Ag mappings
+let g:ag_apply_qmappings=0
+" Use Ag! instead of Ag - disables opening of first result in a new bufer
+ca Ag Ag!
 
 let g:deoplete#enable_at_startup = 1
 set completeopt-=preview
