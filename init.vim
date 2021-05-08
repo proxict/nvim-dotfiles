@@ -150,6 +150,11 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
         autocmd FileType qf set nobuflisted
     augroup END
 
+" ESC in quickfix window closes quickfix
+    augroup QuickFix
+        au FileType qf map <buffer> <silent> <ESC> :cclose<CR>
+    augroup END
+
 " Set the number of suggestions in completion-menu
     set pumheight=10
 
