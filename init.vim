@@ -32,6 +32,7 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     set background=dark
     colorscheme monokai
     set showmode
+    let c_no_curly_error=1
 
     " Decrease message size - avoids the utterly annoying 
     " "Press ENTER or type command to continue" message
