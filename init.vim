@@ -186,6 +186,16 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     " Convert camelCase to snake_case
     nmap <silent> <Leader>cc :s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g<CR>
 
+    " Variable renaming
+    " https://stackoverflow.com/a/597932/3421618
+    " https://gist.github.com/AndrewRayCode/048616a2e3f5d1b5a9ad
+    function! Refactor()
+        call inputsave()
+        let @z=input("What do you want to rename '" . @z . "' to? ")
+        call inputrestore()
+    endfunction
+    nmap gr "zyiw:call Refactor()<cr>m0:silent! norm gd<cr>[{V%:s/<C-R>//<c-r>z/g<cr>`0
+
     " Close all buffers
     if !exists(':Q')
         command Q qa
