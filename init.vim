@@ -33,6 +33,7 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     colorscheme monokai
     set showmode
     let c_no_curly_error=1
+    set mouse=
 
     " Decrease message size - avoids the utterly annoying 
     " "Press ENTER or type command to continue" message
@@ -119,13 +120,6 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
 " Keep cursor 5 lines above/below when scrolling
     set scrolloff=5 " scroll lines above/below cursor
     set sidescrolloff=5
-
-" When wrapping is allowed, move the cursor between display lines
-" rather than physical lines
-    noremap <silent> k gk
-    noremap <silent> j gj
-    noremap <silent> 0 g0
-    noremap <silent> $ g$
 
 " Load other settings
     source $VIMHOME/settings/get_hl_color.vim
