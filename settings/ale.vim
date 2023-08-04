@@ -19,6 +19,7 @@ let g:ale_sign_warning = '⚠'
 let g:ale_linters = {
       \ 'c': ['clangd'],
       \ 'cpp': ['clangd'],
+      \ 'rust': ['analyzer'],
       \ }
 
 let g:ale_python_flake8_options = '--ignore=E501'
