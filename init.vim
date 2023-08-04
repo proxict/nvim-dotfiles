@@ -138,6 +138,7 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     source $VIMHOME/settings/ctrl_p.vim
     source $VIMHOME/settings/preserve_line_pos.vim
     source $VIMHOME/settings/git.vim
+    source $VIMHOME/settings/rust_fmt.vim
 
 " Exclude quickfix from buffer list
     augroup qf
@@ -211,7 +212,12 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     nmap <silent> <Leader>w :ALEHover<CR>
 
     " ClangFormat
-    map <silent> <Leader>cf :ClangFormat<CR>
+    augroup codeformat
+        autocmd!
+        autocmd FileType c,cpp nnoremap <buffer> <silent> <Leader>cf :ClangFormat<CR>
+        autocmd FileType rust nnoremap <buffer> <silent> <Leader>cf :Rustfmt<CR>
+    augroup end
+    " autocmd FileType javascript nnoremap <buffer> <C-]> :TernDef<CR>
 
     " Open the terminal with leader + Enter
     nnoremap <leader><CR> :terminal<CR>

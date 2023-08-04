@@ -79,3 +79,6 @@
 [submodule "bundle/vim-glsl"]
 	path = bundle/vim-glsl
 	url = https://github.com/tikhomirov/vim-glsl.git
+[submodule "bundle/vim-rustfmt"]
+	path = bundle/vim-rustfmt
+	url = https://github.com/alx741/vim-rustfmt.git
