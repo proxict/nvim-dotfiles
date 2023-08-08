@@ -23,6 +23,8 @@ let g:ale_linters = {
       \ }
 
 let g:ale_python_flake8_options = '--ignore=E501'
+let g:ale_floating_preview = 1
+let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
 
 " A little hack to set the same bg color as SignColumn
 call CopyHighlightArgs('SignColumn', 'ALEErrorSign', 'ctermbg')
