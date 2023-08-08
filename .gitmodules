@@ -14,10 +14,6 @@
 	path = bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
 	ignore = untracked
-[submodule "bundle/deoplete.nvim"]
-	path = bundle/deoplete.nvim
-	url = https://github.com/Shougo/deoplete.nvim.git
-	ignore = untracked
 [submodule "bundle/lightline-buffer"]
 	path = bundle/lightline-buffer
 	url = https://github.com/taohexxx/lightline-buffer.git
@@ -41,10 +37,6 @@
 [submodule "bundle/suda.vim"]
 	path = bundle/suda.vim
 	url = https://github.com/lambdalisue/suda.vim.git
-	ignore = untracked
-[submodule "bundle/vim-bookmarks"]
-	path = bundle/vim-bookmarks
-	url = https://github.com/MattesGroeger/vim-bookmarks.git
 	ignore = untracked
 [submodule "bundle/vim-clang-format"]
 	path = bundle/vim-clang-format
@@ -88,3 +80,6 @@
 [submodule "bundle/monokai.nvim"]
 	path = bundle/monokai.nvim
 	url = https://github.com/tanvirtin/monokai.nvim.git
+[submodule "bundle/coc.nvim"]
+	path = bundle/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git

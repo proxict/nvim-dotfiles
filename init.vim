@@ -15,6 +15,9 @@
 scriptencoding utf-8
 let $VIMHOME= '/etc/nvim'
 
+" On a fresh installation of this configuration, issue this command
+" to install coc.nvim: `:call coc#util#install()`
+
 set backupdir=~/.nvim/backup//
 set directory=~/.nvim/swap//
 
@@ -123,7 +126,6 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
 " Load other settings
     source $VIMHOME/settings/get_hl_color.vim
     source $VIMHOME/settings/ale.vim
-    source $VIMHOME/settings/bookmarks.vim
     source $VIMHOME/settings/auto_quickfix_on_make.vim
     source $VIMHOME/settings/clipboard.vim
     source $VIMHOME/settings/buffer_workflow.vim
@@ -138,6 +140,8 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     source $VIMHOME/settings/preserve_line_pos.vim
     source $VIMHOME/settings/git.vim
     source $VIMHOME/settings/rust_fmt.vim
+    let g:coc_config_home = '$VIMHOME/settings'
+
 
 " Exclude quickfix from buffer list
     augroup qf
@@ -146,22 +150,38 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     augroup END
 
 " ESC in quickfix window closes quickfix
-    augroup QuickFix
-        au FileType qf map <buffer> <silent> <ESC> :cclose<CR>
+    augroup escclose
+        autocmd FileType qf nnoremap <buffer><silent> <esc> :quit<cr>
+        autocmd FileType help nnoremap <buffer><silent> <esc> :quit<cr>
+        autocmd FileType preview nnoremap <buffer><silent> <esc> :quit<cr>
+        autocmd FileType ale-preview nnoremap <buffer><silent> <esc> :quit<cr>
+        autocmd FileType ale-preview.message nnoremap <buffer><silent> <esc> :quit<cr>
+        autocmd FileType ale-preview-selection nnoremap <buffer><silent> <esc> :quit<cr>
     augroup END
 
 " Set the number of suggestions in completion-menu
     set pumheight=10
 
 " Allow moving in completion-menu using tab, arrows and C-j/C-k
-    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+    " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-    inoremap <expr> <down> pumvisible() ? "\<C-n>" : "\<down>"
-    inoremap <expr> <up> pumvisible() ? "\<C-p>" : "\<up>"
+    " inoremap <expr> <down> pumvisible() ? "\<C-n>" : "\<down>"
+    " inoremap <expr> <up> pumvisible() ? "\<C-p>" : "\<up>"
 
-    inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-    inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+    " inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+    " inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+
+    inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+    inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+
+    inoremap <expr> <down> coc#pum#visible() ? coc#pum#next(1) : "\<down>"
+    inoremap <expr> <up> coc#pum#visible() ? coc#pum#prev(1) : "\<up>"
+
+    inoremap <expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+    inoremap <expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
+
+    inoremap <expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 " Toggle show whitespaces
     nmap <silent> <Leader>lw :set list!<CR>
@@ -174,22 +194,6 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     endif
 
 " Some useful mappings
-    map Q <c-w>z
-    nmap q: <nop>
-
-    " Convert camelCase to snake_case
-    nmap <silent> <Leader>cc :s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g<CR>
-
-    " Variable renaming
-    " https://stackoverflow.com/a/597932/3421618
-    " https://gist.github.com/AndrewRayCode/048616a2e3f5d1b5a9ad
-    function! Refactor()
-        call inputsave()
-        let @z=input("What do you want to rename '" . @z . "' to? ")
-        call inputrestore()
-    endfunction
-    nmap gr "zyiw:call Refactor()<cr>m0:silent! norm gd<cr>[{V%:s/<C-R>//<c-r>z/g<cr>`0
-
     " Close all buffers
     if !exists(':Q')
         command Q qa
@@ -201,14 +205,15 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     endif
 
     " NerdTree
-    nmap <silent> <Leader>e :NERDTreeToggle<CR>
+    nmap <silent> <Leader>f :NERDTreeToggle<CR>
     let NERDTreeIgnore = ['\.o$', '\.a$']
 
     " w0rp/ale
     nmap <silent> <Leader>gd :ALEGoToDefinition<CR>
     nmap <silent> <Leader>i :ALEDetail<CR>
-    nmap <silent> <Leader>fr :ALEFindReferences<CR>
+    nmap <silent> <Leader>r :ALEFindReferences<CR>
     nmap <silent> <Leader>w :ALEHover<CR>
+    nmap <silent> <Leader>e :lopen<CR>
 
     " ClangFormat
     augroup codeformat
@@ -261,17 +266,17 @@ let g:ag_apply_qmappings=0
 " Use Ag! instead of Ag - disables opening of first result in a new bufer
 ca Ag Ag!
 
-let g:deoplete#enable_at_startup = 1
 set completeopt-=preview
 
 let g:pathogen_blacklist = []
-" call add(g:pathogen_blacklist, 'directoryNameInBundleDir')
 call add(g:pathogen_blacklist, 'calendar.vim')
 execute pathogen#infect()
 Helptags
 
-call deoplete#custom#source('ale', 'rank', 999)
-call deoplete#custom#option('auto_complete_delay', 50)
+if !isdirectory($VIMHOME.'/bundle/coc.nvim/build')
+    call coc#util#install()
+endif
+
 colorscheme onedark
 
 set secure
