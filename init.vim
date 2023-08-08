@@ -30,7 +30,6 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     syntax on
     set nowrap
     set background=dark
-    colorscheme monokai
     set showmode
     let c_no_curly_error=1
     set mouse=
@@ -273,6 +272,7 @@ Helptags
 
 call deoplete#custom#source('ale', 'rank', 999)
 call deoplete#custom#option('auto_complete_delay', 50)
+colorscheme onedark
 
 set secure
 

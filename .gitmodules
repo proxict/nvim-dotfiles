@@ -82,3 +82,9 @@
 [submodule "bundle/vim-rustfmt"]
 	path = bundle/vim-rustfmt
 	url = https://github.com/alx741/vim-rustfmt.git
+[submodule "bundle/onedark.nvim"]
+	path = bundle/onedark.nvim
+	url = https://github.com/navarasu/onedark.nvim.git
+[submodule "bundle/monokai.nvim"]
+	path = bundle/monokai.nvim
+	url = https://github.com/tanvirtin/monokai.nvim.git
