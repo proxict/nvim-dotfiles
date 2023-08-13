@@ -38,10 +38,6 @@
 	path = bundle/vim-clang-format
 	url = https://github.com/rhysd/vim-clang-format.git
 	ignore = untracked
-[submodule "bundle/vim-cursorword"]
-	path = bundle/vim-cursorword
-	url = https://github.com/itchyny/vim-cursorword.git
-	ignore = untracked
 [submodule "bundle/vim-devicons"]
 	path = bundle/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons.git
@@ -79,3 +75,6 @@
 [submodule "bundle/coc.nvim"]
 	path = bundle/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
+[submodule "bundle/vim-illuminate"]
+	path = bundle/vim-illuminate
+	url = https://github.com/RRethy/vim-illuminate.git
