@@ -131,7 +131,6 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     source $VIMHOME/settings/auto_paste.vim
     source $VIMHOME/settings/split_switch.vim
     source $VIMHOME/settings/cpp_enhanced_highlight.vim
-    source $VIMHOME/settings/rainbow.vim
     source $VIMHOME/settings/tabspace.vim
     source $VIMHOME/settings/ctrl_p.vim
     source $VIMHOME/settings/preserve_line_pos.vim
