@@ -15,9 +15,6 @@
 scriptencoding utf-8
 let $VIMHOME= '/etc/nvim'
 
-" On a fresh installation of this configuration, issue this command
-" to install coc.nvim: `:call coc#util#install()`
-
 set backupdir=~/.nvim/backup//
 set directory=~/.nvim/swap//
 
@@ -194,11 +191,6 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     endif
 
 " Some useful mappings
-    " Close all buffers
-    if !exists(':Q')
-        command Q qa
-    endif
-
     " suda plugin
     if !exists(':W')
         command W w suda://%
@@ -235,23 +227,8 @@ set wildignore+=*/CMakeFiles/*,*/build/*,*/googletest/*
     noremap <C-h> <C-o>
     noremap <C-l> <C-i>
 
-    " Scrolling in insert mode using Ctrl-j and Ctrl-k - trying to get used to
-    " not using this
-    " inoremap <silent> <C-j> <C-x><C-e><Esc>a
-    " inoremap <silent> <C-k> <C-x><C-y><Esc>a
-
     " Reindent whole file
     nmap <Leader>ii gg=G
-
-    " Enlarge the quickfix window
-    nmap <silent> <Leader>q :40copen<CR>
-
-    " Toggle between *.cc and *.h files
-    "nnoremap <Backspace> :e %:p:s,.h$,.X123X,:s,.cc$,.h,:s,.X123X$,.cc,<CR>
-    nnoremap <Backspace> :A<CR>
-
-" remember opened buffers in viminfo
-" exec 'set viminfo=%,' . &viminfo
 
 let g:wordmotion_spaces = [ '_' ]
 let g:wordmotion_uppercase_spaces = ['-', '.', ',', '<', '>', '(', ')', '[', ']', '{', '}', '&', '*', '=', '!', '+', ';', ':', '"']
