@@ -22,10 +22,6 @@
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 	ignore = untracked
-[submodule "bundle/nvim-gdb"]
-	path = bundle/nvim-gdb
-	url = https://github.com/sakhnik/nvim-gdb.git
-	ignore = untracked
 [submodule "bundle/papercolor-theme"]
 	path = bundle/papercolor-theme
 	url = https://github.com/NLKNguyen/papercolor-theme.git
@@ -46,23 +42,13 @@
 	path = bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
 	ignore = untracked
-[submodule "bundle/vim-grammarous"]
-	path = bundle/vim-grammarous
-	url = https://github.com/rhysd/vim-grammarous.git
-	ignore = untracked
 [submodule "bundle/vim-wordmotion"]
 	path = bundle/vim-wordmotion
 	url = https://github.com/chaoren/vim-wordmotion.git
 	ignore = untracked
-[submodule "bundle/calendar.vim"]
-	path = bundle/calendar.vim
-	url = https://github.com/itchyny/calendar.vim.git
 [submodule "bundle/gruvbox"]
 	path = bundle/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
-[submodule "bundle/vim-glsl"]
-	path = bundle/vim-glsl
-	url = https://github.com/tikhomirov/vim-glsl.git
 [submodule "bundle/vim-rustfmt"]
 	path = bundle/vim-rustfmt
 	url = https://github.com/alx741/vim-rustfmt.git
