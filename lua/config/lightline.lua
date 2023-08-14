@@ -22,11 +22,8 @@ vim.g.lightline = {
     },
     component = {
       separator = '',
+      filename = '%{expand("%:p")}',
     },
-}
-
-vim.g.lightline.component = {
-   filename = '%{expand("%:t") == "ControlP" ? g:lightline.ctrlp_item : expand("%:p")}'
 }
 
 vim.g.lightline_buffer_readonly_icon = ''
