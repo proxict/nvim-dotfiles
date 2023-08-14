@@ -64,3 +64,21 @@
 [submodule "bundle/vim-illuminate"]
 	path = bundle/vim-illuminate
 	url = https://github.com/RRethy/vim-illuminate.git
+[submodule "bundle/kanagawa.nvim"]
+	path = bundle/kanagawa.nvim
+	url = https://github.com/rebelot/kanagawa.nvim.git
+[submodule "bundle/asyncrun.vim"]
+	path = bundle/asyncrun.vim
+	url = https://github.com/skywind3000/asyncrun.vim.git
+[submodule "bundle/nvim-treesitter"]
+	path = bundle/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter.git
+[submodule "bundle/nvim-tree.lua"]
+	path = bundle/nvim-tree.lua
+	url = https://github.com/nvim-tree/nvim-tree.lua.git
+[submodule "bundle/telescope.nvim"]
+	path = bundle/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim.git
+[submodule "bundle/plenary.nvim"]
+	path = bundle/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim.git
