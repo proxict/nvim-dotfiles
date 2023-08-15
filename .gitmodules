@@ -34,10 +34,6 @@
 	path = bundle/vim-clang-format
 	url = https://github.com/rhysd/vim-clang-format.git
 	ignore = untracked
-[submodule "bundle/vim-devicons"]
-	path = bundle/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons.git
-	ignore = untracked
 [submodule "bundle/vim-gitgutter"]
 	path = bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
@@ -82,3 +78,6 @@
 [submodule "bundle/plenary.nvim"]
 	path = bundle/plenary.nvim
 	url = https://github.com/nvim-lua/plenary.nvim.git
+[submodule "bundle/nvim-web-devicons"]
+	path = bundle/nvim-web-devicons
+	url = https://github.com/nvim-tree/nvim-web-devicons.git
