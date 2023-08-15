@@ -70,7 +70,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- ESC in these filetypes will close them
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'qf', 'help', 'NvimTree', 'preview', 'ale-preview', 'ale-preview.message', 'ale-preview-selection' },
+    pattern = { 'qf', 'help', 'man', 'NvimTree', 'preview', 'ale-preview', 'ale-preview.message', 'ale-preview-selection' },
     group    = vim.api.nvim_create_augroup('EscFileTypeQuit', {}),
     callback = function()
         local buf_index = vim.api.nvim_get_current_buf()
