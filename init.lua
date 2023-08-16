@@ -129,7 +129,7 @@ vim.api.nvim_set_keymap('v', '<S-Tab>', '<gv', { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap('n', '<Leader>vc', ':execute "!git blame -L " . eval((line(".")-5)) . ",+10 %"<CR>', { noremap = true, silent = true })
 
-vim.g.coc_config_home = '/etc/nvim/settings'
+vim.g.coc_config_home = '/etc/nvim/coc'
 
 if not vim.fn.isdirectory('/etc/nvim/bundle/coc.nvim/build') then
     vim.fn['coc#util#install']()
