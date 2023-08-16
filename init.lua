@@ -127,6 +127,10 @@ vim.api.nvim_set_keymap('n', '<S-Tab>', '<<_', { noremap = true, silent = true }
 vim.api.nvim_set_keymap('v', '<Tab>', '>gv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<S-Tab>', '<gv', { noremap = true, silent = true })
 
+-- Move selected lines and automatically indent them
+vim.api.nvim_set_keymap('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap('n', '<Leader>vc', ':execute "!git blame -L " . eval((line(".")-5)) . ",+10 %"<CR>', { noremap = true, silent = true })
 
 vim.g.coc_config_home = '/etc/nvim/coc'
