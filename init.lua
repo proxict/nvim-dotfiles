@@ -131,6 +131,11 @@ vim.api.nvim_set_keymap('v', '<S-Tab>', '<gv', { noremap = true, silent = true }
 vim.api.nvim_set_keymap('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
+-- Delete highlighted text into the void register, keeping the copy register untouched
+vim.api.nvim_set_keymap('x', '<Leader>p', '"_dP', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>d', '"_d', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<Leader>d', '"_d', { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap('n', '<Leader>vc', ':execute "!git blame -L " . eval((line(".")-5)) . ",+10 %"<CR>', { noremap = true, silent = true })
 
 vim.g.coc_config_home = '/etc/nvim/coc'
