@@ -33,3 +33,8 @@ vim.fn.sign_define("DiagnosticSignWarn",   {text = '',  texthl = "DiagnosticS
 vim.fn.sign_define("DiagnosticSignInfo",   {text = '',  texthl = "DiagnosticSignInfo"})
 vim.fn.sign_define("DiagnosticSignHint",   {text = '',  texthl = "DiagnosticSignHint"})
 
+vim.keymap.set('n', '<Leader>gd', ':ALEGoToDefinition<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>i', ':ALEDetail<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>r', ':ALEFindReferences<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>w', ':ALEHover<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>e', ':lopen<CR>', { silent = true })

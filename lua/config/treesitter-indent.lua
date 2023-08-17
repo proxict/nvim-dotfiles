@@ -8,3 +8,7 @@ vim.keymap.set({"x", "o"}, "aI", "<Cmd>lua require'treesitter_indent_object.text
 vim.keymap.set({"x", "o"}, "ii", "<Cmd>lua require'treesitter_indent_object.textobj'.select_indent_inner()<CR>")
 -- select entire inner range (including if, else, etc.)
 vim.keymap.set({"x", "o"}, "iI", "<Cmd>lua require'treesitter_indent_object.textobj'.select_indent_inner(true)<CR>")
+
+-- Toggle whitespaces and indentation visibility
+vim.keymap.set('n', '<Leader>lw', ':set list!<CR>:IndentBlanklineToggle<CR>', { silent = true })
+

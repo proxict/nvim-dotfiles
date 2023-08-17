@@ -56,3 +56,5 @@ require("nvim-tree").setup({
         exclude = { 'build', 'compile_flags.txt', 'compile_commands.json' },
     },
 })
+
+vim.keymap.set('n', '<Leader>f', ':NvimTreeToggle<CR>', { silent = true })
