@@ -19,6 +19,7 @@ require('config.paste')
 require('config.lightline')
 require('config.rustfmt')
 require('config.telescope')
+require('config.blankline')
 
 local set = vim.opt
 
@@ -235,7 +236,7 @@ vim.api.nvim_set_keymap('', '<C-h>', '<C-o>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('', '<C-l>', '<C-i>', { noremap = true, silent = true })
 
 -- Toggle whitespaces visibility
-vim.api.nvim_set_keymap('n', '<Leader>lw', ':set list!<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>lw', ':set list!<CR>:IndentBlanklineToggle<CR>', { silent = true })
 
 -- Reindent whole file
 vim.api.nvim_set_keymap('n', '<Leader>ii', 'gg=G', { silent = true })

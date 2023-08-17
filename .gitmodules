@@ -77,3 +77,6 @@
 [submodule "bundle/nvim-web-devicons"]
 	path = bundle/nvim-web-devicons
 	url = https://github.com/nvim-tree/nvim-web-devicons.git
+[submodule "bundle/indent-blankline.nvim"]
+	path = bundle/indent-blankline.nvim
+	url = https://github.com/lukas-reineke/indent-blankline.nvim
