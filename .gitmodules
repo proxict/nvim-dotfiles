@@ -80,3 +80,6 @@
 [submodule "bundle/indent-blankline.nvim"]
 	path = bundle/indent-blankline.nvim
 	url = https://github.com/lukas-reineke/indent-blankline.nvim
+[submodule "bundle/treesitter-indent-object.nvim"]
+	path = bundle/treesitter-indent-object.nvim
+	url = https://github.com/kiyoon/treesitter-indent-object.nvim.git

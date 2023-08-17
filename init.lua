@@ -20,6 +20,7 @@ require('config.lightline')
 require('config.rustfmt')
 require('config.telescope')
 require('config.blankline')
+require("config.treesitter-indent")
 
 local set = vim.opt
 
