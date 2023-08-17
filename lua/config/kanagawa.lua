@@ -1,5 +1,8 @@
 require('kanagawa').setup({
     compile = true,             -- enable compiling the colorscheme
+    -- After changing this config, follow these steps if compile is enabled:
+    -- Restart nvim
+    -- :KanagawaCompile
     undercurl = true,            -- enable undercurls
     commentStyle = { italic = true },
     functionStyle = {},
@@ -14,7 +17,10 @@ require('kanagawa').setup({
         theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
     },
     overrides = function(colors) -- add/modify highlights
-        return {}
+        return {
+            Visual = { bg = "#195DC3", fg = "#cecece" },
+            Comment = { fg = "#919083" },
+        }
     end,
     theme = "wave",              -- Load "wave" theme when 'background' option is not set
     background = {               -- map the value of 'background' option to a theme
