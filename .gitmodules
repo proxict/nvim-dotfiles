@@ -83,3 +83,6 @@
 [submodule "bundle/treesitter-indent-object.nvim"]
 	path = bundle/treesitter-indent-object.nvim
 	url = https://github.com/kiyoon/treesitter-indent-object.nvim.git
+[submodule "bundle/telescope-fzf-native.nvim"]
+	path = bundle/telescope-fzf-native.nvim
+	url = https://github.com/nvim-telescope/telescope-fzf-native.nvim.git

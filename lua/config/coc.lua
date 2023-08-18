@@ -11,7 +11,7 @@ vim.keymap.set('i', '<C-k>', 'coc#pum#visible() ? coc#pum#prev(1) : "\\<C-k>"', 
 
 vim.keymap.set('i', '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<CR>"', { noremap = true, silent = true, expr = true })
 
-if not vim.fn.isdirectory('/etc/nvim/bundle/coc.nvim/build') then
+if vim.fn.isdirectory('/etc/nvim/bundle/coc.nvim/build') == 0 then
     vim.fn['coc#util#install']()
 end
 
