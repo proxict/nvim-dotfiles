@@ -1,9 +1,6 @@
 -- Open a new empty buffer
 vim.keymap.set('n', '<Leader>T', ':enew<CR>', { noremap = false, silent = true })
 
--- List open buffers
-vim.keymap.set('n', '<Leader>bl', ':CtrlPBuffer<CR>', { noremap = false, silent = true })
-
 -- Move to the next buffer
 vim.keymap.set('n', 'L', ':bnext<CR>', { noremap = false, silent = true })
 

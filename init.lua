@@ -19,14 +19,15 @@ require('config.illuminate')
 require('config.treesitter')
 require('config.kanagawa')
 require('config.nvim-tree')
-require('config.ale')
-require("config.coc")
+--require('config.ale')
+--require("config.coc")
 require('config.lightline')
 require('config.rustfmt')
 require('config.telescope')
 require('config.blankline')
 require("config.treesitter-indent")
 require("config.wordmotion")
+require("config.lsp-config")
 
 -- Other mappings and specific configuration
 require("config.ag")
@@ -51,8 +52,6 @@ vim.api.nvim_create_autocmd('FileType', {
     group    = vim.api.nvim_create_augroup('FormatOptionsOverride', {}),
     callback = function() set.formatoptions = set.formatoptions - { 'o' } end
 })
-
-set.completeopt = set.completeopt - { 'preview' }
 
 set.clipboard = 'unnamedplus'
 set.termguicolors = true
@@ -110,8 +109,6 @@ set.pumheight = 10
 -- Keep cursor 5 lines above/below when scrolling
 set.scrolloff = 5
 set.sidescrolloff = 5
-
-vim.opt.completeopt = { 'menuone', 'noselect', 'noinsert' }
 
 -- a: Decrease message size - avoids the utterly annoying 
 -- "Press ENTER or type command to continue" message.

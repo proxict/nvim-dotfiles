@@ -2,14 +2,6 @@
 	path = bundle/ag.vim
 	url = https://github.com/rking/ag.vim
 	ignore = untracked
-[submodule "bundle/ale"]
-	path = bundle/ale
-	url = https://github.com/proxict/ale.git
-	ignore = untracked
-[submodule "bundle/ctrlp.vim"]
-	path = bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
-	ignore = untracked
 [submodule "bundle/lightline-buffer"]
 	path = bundle/lightline-buffer
 	url = https://github.com/taohexxx/lightline-buffer.git
@@ -17,10 +9,6 @@
 [submodule "bundle/lightline.vim"]
 	path = bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
-	ignore = untracked
-[submodule "bundle/papercolor-theme"]
-	path = bundle/papercolor-theme
-	url = https://github.com/NLKNguyen/papercolor-theme.git
 	ignore = untracked
 [submodule "bundle/suda.vim"]
 	path = bundle/suda.vim
@@ -50,9 +38,6 @@
 [submodule "bundle/monokai.nvim"]
 	path = bundle/monokai.nvim
 	url = https://github.com/tanvirtin/monokai.nvim.git
-[submodule "bundle/coc.nvim"]
-	path = bundle/coc.nvim
-	url = https://github.com/neoclide/coc.nvim.git
 [submodule "bundle/vim-illuminate"]
 	path = bundle/vim-illuminate
 	url = https://github.com/RRethy/vim-illuminate.git
@@ -86,3 +71,18 @@
 [submodule "bundle/telescope-fzf-native.nvim"]
 	path = bundle/telescope-fzf-native.nvim
 	url = https://github.com/nvim-telescope/telescope-fzf-native.nvim.git
+[submodule "bundle/cmp-buffer"]
+	path = bundle/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer.git
+[submodule "bundle/cmp-nvim-lsp"]
+	path = bundle/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp.git
+[submodule "bundle/cmp-path"]
+	path = bundle/cmp-path
+	url = https://github.com/hrsh7th/cmp-path.git
+[submodule "bundle/nvim-cmp"]
+	path = bundle/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp.git
+[submodule "bundle/nvim-lspconfig"]
+	path = bundle/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig.git
