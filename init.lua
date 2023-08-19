@@ -61,6 +61,9 @@ set.wildignore = set.wildignore + { '*/CMakeFiles/*', '*/build/*', '*/googletest
 
 -- Add <> brackets to the list of matching pairs
 set.matchpairs:append('<:>')
+-- vim.g.loaded_matchparen = 1 -- consider setting this for some filetypes
+vim.g.matchparen_timeout = 20 --ms
+vim.g.matchparen_insert_timeout = 20 --ms
 
 set.mouse = ""
 set.background='dark'
