@@ -67,6 +67,18 @@ set.mouse = ""
 set.background='dark'
 set.showmode = true
 
+-- Set up indentation
+set.smartindent = true
+set.autoindent = true
+set.cindent = true
+
+set.cinoptions = {
+    "g0", -- Don't indent public, protected and private specifiers
+    ":0", "l1", "b0", -- switch-case indentation
+    "N-s", -- namespace indentation
+    "(1s,W1s", -- indentation of new line after unclosed (
+}
+
 -- vim's commandline autocompletion
 set.wildmenu = true
 set.wildmode = { 'longest', 'list' }

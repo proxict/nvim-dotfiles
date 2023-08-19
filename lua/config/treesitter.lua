@@ -65,5 +65,5 @@ require("nvim-treesitter.configs").setup({
         enable = true,
         disable = { "" },
     },
-    indent = { enable = true, disable = { "yaml" } },
+    indent = { enable = true, disable = { "yaml", "php" } },
 })
