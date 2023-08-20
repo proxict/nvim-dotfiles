@@ -1,4 +1,6 @@
 require('illuminate').configure({
+    active = true,
+    on_config_done = nil,
     -- providers: provider used to get references in the buffer, ordered by priority
     providers = {
         -- 'treesitter', -- introduces too much lag
@@ -13,8 +15,19 @@ require('illuminate').configure({
     filetype_overrides = {},
     -- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
     filetypes_denylist = {
-        'dirvish',
-        'fugitive',
+        "dirvish",
+        "fugitive",
+        "alpha",
+        "NvimTree",
+        "lazy",
+        "neogitstatus",
+        "Trouble",
+        "lir",
+        "Outline",
+        "spectre_panel",
+        "toggleterm",
+        "DressingSelect",
+        "TelescopePrompt",
     },
     -- filetypes_allowlist: filetypes to illuminate, this is overridden by filetypes_denylist
     filetypes_allowlist = {},
