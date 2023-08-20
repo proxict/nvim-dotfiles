@@ -7,11 +7,19 @@ local servers = { 'clangd', 'rust_analyzer', 'bashls', 'pyright', 'cmake' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         on_attach = function(client)
-            -- help vim.lsp.semantic_tokens.start()
+            -- :help vim.lsp.semantic_tokens.start()
             client.server_capabilities.semanticTokensProvider = nil
         end,
         capabilities = capabilities,
     }
+end
+
+-- Add rounded borders to floating windows
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+    opts = opts or {}
+    opts.border = opts.border or 'rounded'
+    return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
 local cmp = require 'cmp'
@@ -105,6 +113,21 @@ vim.fn.sign_define("DiagnosticSignWarn",   {text = '',  texthl = "DiagnosticS
 vim.fn.sign_define("DiagnosticSignInfo",   {text = '',  texthl = "DiagnosticSignInfo"})
 vim.fn.sign_define("DiagnosticSignHint",   {text = '',  texthl = "DiagnosticSignHint"})
 --vim.keymap.set('n', '<Leader>e', ':lopen<CR>', { silent = true })
+
+vim.cmd [[
+hi DiagnosticUnderlineError guisp='Red' gui=underline
+hi DiagnosticUnderlineWarn guisp='Cyan' gui=undercurl
+]]
+
+vim.diagnostic.config({
+    update_in_insert = false,
+    virtual_text = false,
+    float = { border = 'rounded' },
+    undercurl = true,
+    signs = {
+        priority = 30,
+    }
+})
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
