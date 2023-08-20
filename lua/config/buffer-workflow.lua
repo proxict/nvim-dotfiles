@@ -22,6 +22,8 @@ vim.keymap.set('', '<C-l>', '<C-i>', { noremap = true, silent = true })
 -- Move selected lines and automatically indent them
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set('n', '<A-j>', ":m .+1<CR>==", { noremap = true, silent = true })
+vim.keymap.set('n', '<A-k>', ":m .-2<CR>==", { noremap = true, silent = true })
 
 -- Indent using tab
 vim.keymap.set('n', '<Tab>', '>>_', { noremap = true, silent = true })
