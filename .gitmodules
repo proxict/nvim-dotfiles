@@ -90,3 +90,6 @@
 [submodule "bundle/bufferline.nvim"]
 	path = bundle/bufferline.nvim
 	url = https://github.com/akinsho/bufferline.nvim.git
+[submodule "bundle/onedarker.nvim"]
+	path = bundle/onedarker.nvim
+	url = https://github.com/LunarVim/onedarker.nvim.git
