@@ -7,7 +7,8 @@ require("nvim-tree").setup({
         end
         api.config.mappings.default_on_attach(bufnr)
         vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
-        --vim.keymap.del('n', 'H', { buffer = bufnr })
+        vim.keymap.del('n', 'bd', { buffer = bufnr })
+        vim.keymap.del('n', 'bmv', { buffer = bufnr })
         vim.keymap.set('n', '<C-h>', api.tree.toggle_hidden_filter, opts('Toggle Filter: Dotfiles'))
         vim.keymap.set('n', 'H', '<C-w>w:BufferLineCyclePrev<CR><C-w>w', opts('Previous buffer'))
         vim.keymap.set('n', 'L', '<C-w>w:BufferLineCyclePrev<CR><C-w>w', opts('Next buffer'))
