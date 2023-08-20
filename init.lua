@@ -26,6 +26,7 @@ require('config.blankline')
 require("config.treesitter-indent")
 require("config.wordmotion")
 require("config.lsp-config")
+require("config.echo-diagnostic")
 
 -- Other mappings and specific configuration
 require("config.ag")

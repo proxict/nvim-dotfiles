@@ -89,3 +89,6 @@
 [submodule "bundle/trouble.nvim"]
 	path = bundle/trouble.nvim
 	url = https://github.com/folke/trouble.nvim.git
+[submodule "bundle/nvim-echo-diagnostics"]
+	path = bundle/nvim-echo-diagnostics
+	url = https://github.com/seblj/nvim-echo-diagnostics.git
