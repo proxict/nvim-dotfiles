@@ -1,12 +1,6 @@
 -- Open a new empty buffer
 vim.keymap.set('n', '<Leader>T', ':enew<CR>', { noremap = false, silent = true })
 
--- Move to the next buffer
-vim.keymap.set('n', 'L', ':bnext<CR>', { noremap = false, silent = true })
-
--- Move to the previous buffer
-vim.keymap.set('n', 'H', ':bprevious<CR>', { noremap = false, silent = true })
-
 -- Close the current buffer and move to the previous one
 vim.keymap.set('n', '<Leader>bd', ':bw<CR>', { noremap = false, silent = true })
 

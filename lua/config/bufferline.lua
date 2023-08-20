@@ -10,3 +10,6 @@ require("bufferline").setup{
         end,
     },
 }
+
+vim.keymap.set('n', 'H', ':BufferLineCyclePrev<CR>', {silent = true})
+vim.keymap.set('n', 'L', ':BufferLineCycleNext<CR>', {silent = true})
