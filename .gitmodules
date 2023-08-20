@@ -93,3 +93,6 @@
 [submodule "bundle/onedarker.nvim"]
 	path = bundle/onedarker.nvim
 	url = https://github.com/LunarVim/onedarker.nvim.git
+[submodule "bundle/nordic.nvim"]
+	path = bundle/nordic.nvim
+	url = https://github.com/AlexvZyl/nordic.nvim.git
