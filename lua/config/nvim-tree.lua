@@ -1,4 +1,5 @@
 require("nvim-tree").setup({
+    hijack_cursor = true,
     on_attach = function(bufnr)
         local api = require('nvim-tree.api')
         local function opts(desc)
@@ -12,11 +13,22 @@ require("nvim-tree").setup({
     disable_netrw = true,
     sort_by = "name",
     view = {
+        centralize_selection = true,
         width = 35,
         number = false,
     },
     renderer = {
         group_empty = true,
+        add_trailing = false,
+        highlight_git = true,
+        full_name = false,
+        highlight_opened_files = 'none',
+        root_folder_label = ":t",
+        indent_width = 2,
+        indent_markers = {
+          enable = false,
+          inline_arrows = true,
+        },
         icons = {
             webdev_colors = true,
             git_placement = "before",

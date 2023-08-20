@@ -26,6 +26,8 @@ require("config.treesitter-indent")
 require("config.wordmotion")
 require("config.lsp-config")
 require("config.echo-diagnostic")
+require("config.lualine")
+require("config.bufferline")
 
 -- Other mappings and specific configuration
 require("config.ag")

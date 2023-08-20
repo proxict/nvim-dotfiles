@@ -84,3 +84,9 @@
 [submodule "bundle/nvim-echo-diagnostics"]
 	path = bundle/nvim-echo-diagnostics
 	url = https://github.com/seblj/nvim-echo-diagnostics.git
+[submodule "bundle/lualine.nvim"]
+	path = bundle/lualine.nvim
+	url = https://github.com/nvim-lualine/lualine.nvim.git
+[submodule "bundle/bufferline.nvim"]
+	path = bundle/bufferline.nvim
+	url = https://github.com/akinsho/bufferline.nvim.git
