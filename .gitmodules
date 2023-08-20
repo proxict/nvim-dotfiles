@@ -2,14 +2,6 @@
 	path = bundle/ag.vim
 	url = https://github.com/rking/ag.vim
 	ignore = untracked
-[submodule "bundle/lightline-buffer"]
-	path = bundle/lightline-buffer
-	url = https://github.com/taohexxx/lightline-buffer.git
-	ignore = untracked
-[submodule "bundle/lightline.vim"]
-	path = bundle/lightline.vim
-	url = https://github.com/itchyny/lightline.vim.git
-	ignore = untracked
 [submodule "bundle/suda.vim"]
 	path = bundle/suda.vim
 	url = https://github.com/lambdalisue/suda.vim.git
