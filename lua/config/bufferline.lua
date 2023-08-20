@@ -13,3 +13,5 @@ require("bufferline").setup{
 
 vim.keymap.set('n', 'H', ':BufferLineCyclePrev<CR>', {silent = true})
 vim.keymap.set('n', 'L', ':BufferLineCycleNext<CR>', {silent = true})
+vim.keymap.set('n', '<A-h>', ':BufferLineMovePrev<CR>', {silent = true})
+vim.keymap.set('n', '<A-l>', ':BufferLineMoveNext<CR>', {silent = true})
