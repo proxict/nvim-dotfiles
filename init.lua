@@ -17,7 +17,6 @@ vim.keymap.set('n', '<Leader>;', ',', { noremap = true, silent = true })
 -- Plugin settings
 require('config.illuminate')
 require('config.treesitter')
-require('config.kanagawa')
 require('config.nvim-tree')
 require('config.rustfmt')
 require('config.telescope')
@@ -38,6 +37,9 @@ require('config.buffer-workflow')
 require("config.code-format")
 require("config.cppbuild")
 require("config.window-split")
+
+--require('config.kanagawa')
+require('config.nordic')
 
 -- Allow project specific settings
 set.exrc = true
