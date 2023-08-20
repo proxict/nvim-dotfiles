@@ -1,4 +1,14 @@
 require("nvim-tree").setup({
+    on_attach = function(bufnr)
+        local api = require('nvim-tree.api')
+        local function opts(desc)
+            return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        end
+        api.config.mappings.default_on_attach(bufnr)
+        vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+        vim.keymap.del('n', 'H', { buffer = bufnr })
+        vim.keymap.set('n', '<C-h>', api.tree.toggle_hidden_filter, opts('Toggle Filter: Dotfiles'))
+    end,
     disable_netrw = true,
     sort_by = "name",
     view = {
