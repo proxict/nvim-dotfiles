@@ -11,7 +11,7 @@ require("nvim-tree").setup({
         vim.keymap.del('n', 'bmv', { buffer = bufnr })
         vim.keymap.set('n', '<C-h>', api.tree.toggle_hidden_filter, opts('Toggle Filter: Dotfiles'))
         vim.keymap.set('n', 'H', '<C-w>w:BufferLineCyclePrev<CR><C-w>w', opts('Previous buffer'))
-        vim.keymap.set('n', 'L', '<C-w>w:BufferLineCyclePrev<CR><C-w>w', opts('Next buffer'))
+        vim.keymap.set('n', 'L', '<C-w>w:BufferLineCycleNext<CR><C-w>w', opts('Next buffer'))
     end,
     disable_netrw = true,
     sort_by = "name",
