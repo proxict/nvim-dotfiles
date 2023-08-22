@@ -32,7 +32,6 @@ require("config.trouble")
 -- Other mappings and specific configuration
 require("config.ag")
 require("config.esc")
-require('config.paste')
 require('config.buffer-workflow')
 require("config.code-format")
 require("config.cppbuild")
