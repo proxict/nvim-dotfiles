@@ -14,7 +14,10 @@ require('nordic').setup({
     -- Swap the dark background with the normal one.
     swap_backgrounds = false,
     -- Override the styling of any highlight group.
-    override = {},
+    override = {
+        Visual = { bg = "#5E81AC" },
+        Comment = { fg = "#6D7481" },
+    },
     -- Cursorline options.  Also includes visual/selection.
     cursorline = {
         -- Bold font in cursorline.
