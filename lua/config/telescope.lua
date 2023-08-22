@@ -42,6 +42,7 @@ end
 
 require("telescope").setup({
     defaults = {
+        scroll_strategy = 'limit',
         vimgrep_arguments = {
             'rg',
             '--color=never',
