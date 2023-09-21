@@ -30,9 +30,6 @@
 [submodule "bundle/monokai.nvim"]
 	path = bundle/monokai.nvim
 	url = https://github.com/tanvirtin/monokai.nvim.git
-[submodule "bundle/vim-illuminate"]
-	path = bundle/vim-illuminate
-	url = https://github.com/RRethy/vim-illuminate.git
 [submodule "bundle/kanagawa.nvim"]
 	path = bundle/kanagawa.nvim
 	url = https://github.com/rebelot/kanagawa.nvim.git
@@ -96,3 +93,6 @@
 [submodule "bundle/nordic.nvim"]
 	path = bundle/nordic.nvim
 	url = https://github.com/AlexvZyl/nordic.nvim.git
+[submodule "bundle/mini.cursorword"]
+	path = bundle/mini.cursorword
+	url = https://github.com/echasnovski/mini.cursorword.git

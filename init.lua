@@ -15,7 +15,7 @@ vim.g.mapleader = ','
 vim.keymap.set('n', '<Leader>;', ',', { noremap = true, silent = true })
 
 -- Plugin settings
-require('config.illuminate')
+require('config.cursorword')
 require('config.treesitter')
 require('config.nvim-tree')
 require('config.rustfmt')
