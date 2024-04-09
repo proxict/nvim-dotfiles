@@ -10,10 +10,6 @@
 	path = bundle/vim-clang-format
 	url = https://github.com/rhysd/vim-clang-format.git
 	ignore = untracked
-[submodule "bundle/vim-gitgutter"]
-	path = bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
-	ignore = untracked
 [submodule "bundle/vim-wordmotion"]
 	path = bundle/vim-wordmotion
 	url = https://github.com/chaoren/vim-wordmotion.git
@@ -96,3 +92,6 @@
 [submodule "bundle/mini.cursorword"]
 	path = bundle/mini.cursorword
 	url = https://github.com/echasnovski/mini.cursorword.git
+[submodule "bundle/gitsigns.nvim"]
+	path = bundle/gitsigns.nvim
+	url = https://github.com/lewis6991/gitsigns.nvim.git

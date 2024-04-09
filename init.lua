@@ -28,6 +28,7 @@ require("config.echo-diagnostic")
 require("config.lualine")
 require("config.bufferline")
 require("config.trouble")
+require("gitsigns").setup()
 
 -- Other mappings and specific configuration
 require("config.ag")
