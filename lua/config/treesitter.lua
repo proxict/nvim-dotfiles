@@ -3,7 +3,6 @@ require("nvim-treesitter.install").prefer_git = true
 require("nvim-treesitter.configs").setup({
     ensure_installed = { "awk",
                          "bash",
-                         "bibtex",
                          "c",
                          "cmake",
                          "comment",
@@ -28,7 +27,6 @@ require("nvim-treesitter.configs").setup({
                          "json",
                          "json5",
                          "jsonc",
-                         "latex",
                          "lua",
                          "luadoc",
                          "luap",
