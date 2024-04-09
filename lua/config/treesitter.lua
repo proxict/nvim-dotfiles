@@ -28,7 +28,6 @@ require("nvim-treesitter.configs").setup({
                          "json",
                          "json5",
                          "jsonc",
-                         "kotlin",
                          "latex",
                          "lua",
                          "luadoc",
@@ -49,7 +48,6 @@ require("nvim-treesitter.configs").setup({
                          "python",
                          "regex",
                          "requirements",
-                         "ruby",
                          "rust",
                          "scss",
                          "sql",
@@ -65,5 +63,5 @@ require("nvim-treesitter.configs").setup({
         enable = true,
         disable = { "" },
     },
-    indent = { enable = true, disable = { "yaml", "php" } },
+    indent = { enable = false, disable = { "yaml", "php" } },
 })
