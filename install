@@ -27,11 +27,13 @@ RUNTIME_PATH="$(nvim -u NONE --headless -c "echo \$VIM" -c q 2>&1)"
 
 [ ! -d "${RUNTIME_PATH}" ] && echo "Failed to get \$VIM runtime path" >&2 && exit 1
 
-[ ! -L /usr/share/nvim/site ] && ln -s "${SCRIPT_DIR}" "${RUNTIME_PATH}/site"
+[ -L "${RUNTIME_PATH}/site" ] && [ ! -L "${RUNTIME_PATH}/site.bak" ] && mv "${RUNTIME_PATH}/site"{,.bak}
+[ ! -L "${RUNTIME_PATH}/site" ] && ln -s "${SCRIPT_DIR}" "${RUNTIME_PATH}/site"
+
 [ -f "${RUNTIME_PATH}/sysinit.vim" ] && [ ! -f "${RUNTIME_PATH}/sysinit.vim.bak" ] && mv "${RUNTIME_PATH}/sysinit."{vim,vim.bak}
 echo "source ${SCRIPT_DIR}/init.lua" > "${RUNTIME_PATH}/sysinit.vim"
 
-readarray -t relevant_users < <(getent passwd | awk -F: '!/(nologin|git)/ {print $1}')
+readarray -t relevant_users < <(getent passwd | awk -F: '!/(nologin|git|sync)/ {print $1}')
 getent group | awk -F: '{print $1}' | grep -E '^nvim$' &>/dev/null || groupadd nvim -U "$(join_by , "${relevant_users[@]}")"
 
 for user in "${relevant_users[@]}"; do
@@ -47,12 +49,11 @@ nvim --headless -c "TSUpdate" -c q 2>&1; echo
 TREESITTER_PARSER_DIR="${SCRIPT_DIR}/bundle/nvim-treesitter/parser"
 TREESITTER_PARSER_INFO_DIR="${SCRIPT_DIR}/bundle/nvim-treesitter/parser-info"
 
-TREESITTER_DIRS=()
-
 for dir in "${TREESITTER_PARSER_DIR}" "${TREESITTER_PARSER_INFO_DIR}"; do
     if [ -d "${dir}" ]; then
         chmod g+s "${dir}"
         chmod 775 "${dir}"
+        chmod g+w "${dir}"/*
         chown -R root:nvim "${dir}"
     else
         echo "tree-sitter '${dir}' directory not found"
