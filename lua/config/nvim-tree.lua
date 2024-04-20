@@ -80,6 +80,9 @@ require("nvim-tree").setup({
         custom = { '.git', '.gitmodules' },
         exclude = { 'build', 'compile_flags.txt', 'compile_commands.json' },
     },
+    git = {
+        timeout = 2000,
+    },
 })
 
 vim.keymap.set('n', '<Leader>f', ':NvimTreeToggle<CR>', { silent = true })
