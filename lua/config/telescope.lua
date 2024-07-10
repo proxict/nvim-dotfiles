@@ -56,6 +56,9 @@ require("telescope").setup({
         mappings = {
             n = {
                 ['p'] = require('telescope.actions.layout').toggle_preview
+            },
+            i = {
+                ["<C-q>"] = require('telescope.actions').send_to_qflist + require('telescope.actions').open_qflist
             }
         },
         preview = {
@@ -99,7 +102,6 @@ else
     LoadFzfExtension()
 end
 
-vim.keymap.set('n', '<Leader>ss', ':Telescope find_files<CR>', { silent = true })
 vim.keymap.set('n', '<Leader>t', ':Telescope find_files<CR>', { silent = true })
-vim.keymap.set('n', '<Leader>sb', ':Telescope buffers<CR>', { silent = true })
-vim.keymap.set('n', '<Leader>sg', ':Telescope live_grep<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>B', ':Telescope buffers<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>S', ':Telescope live_grep<CR>', { silent = true })
