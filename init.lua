@@ -1,4 +1,4 @@
-vim.g.pathogen_blacklist = {}
+vim.g.pathogen_blacklist = {'ag.vim'}
 vim.cmd('execute pathogen#infect()')
 
 local set = vim.opt
@@ -31,7 +31,7 @@ require("config.trouble")
 require("gitsigns").setup()
 
 -- Other mappings and specific configuration
-require("config.ag")
+--require("config.ag")
 require("config.esc")
 require('config.buffer-workflow')
 require("config.code-format")
@@ -143,7 +143,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- Use Ag! instead of Ag - disables opening of first result in a new bufer
-vim.cmd('ca Ag Ag!')
+--vim.cmd('ca Ag Ag!')
 
 -- Suda plugin
 vim.cmd('command W w suda://%')
