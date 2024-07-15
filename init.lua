@@ -142,8 +142,35 @@ vim.api.nvim_create_autocmd('FileType', {
     callback = function() set.buflisted = false end
 })
 
--- Use Ag! instead of Ag - disables opening of first result in a new bufer
---vim.cmd('ca Ag Ag!')
+local function search_rg(...)
+    local args = {...}
+    if #args == 0 then
+        print("No arguments provided for the S command")
+        return
+    end
+
+    local rg_args = table.concat(args, " ")
+
+    local handle = io.popen("rg --color=never --no-heading --with-filename --column --smart-case --trim '" .. rg_args .. "'")
+    local result = handle:read("*a")
+    handle:close()
+
+    local lines = {}
+    for line in result:gmatch("[^\r\n]+") do
+        table.insert(lines, line)
+    end
+
+    vim.fn.setqflist({}, 'r', {
+        title = 'Search results',
+        lines = lines,
+    })
+
+    vim.api.nvim_command('copen')
+end
+
+vim.api.nvim_create_user_command('S', function(opts)
+    search_rg(unpack(opts.fargs))
+end, { nargs = '*' })
 
 -- Suda plugin
 vim.cmd('command W w suda://%')
