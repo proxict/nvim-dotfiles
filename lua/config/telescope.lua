@@ -1,5 +1,4 @@
 local sorters = require('telescope.sorters')
-local utils = require("telescope.utils")
 
 local fd_command = { 'fd', '--type', 'file', '--max-depth=15' }
 
@@ -15,27 +14,26 @@ local function split(inputstr, sep)
 end
 
 local function get_fd_version()
-    local stdout, ret, _ = utils.get_os_command_output({ "fd", "--version", })
+    if vim.fn.executable("fd") == 0 then
+        print("Command `fd` not found")
+        return nil
+    end
 
-    if ret ~= 0 or #stdout ~= 1 then
+    local result = vim.system({ "fd", "--version", }, { text = true }):wait()
+    if result.code ~= 0 then
         print("Command `fd --version` failed")
         return nil
     end
 
-    fd_version = split(stdout[1], ' ')
-    if #fd_version ~= 2 then
+    local version = vim.version.parse(vim.split(result.stdout or "", " ")[2])
+    if not version then
         return nil
     end
 
-    local version_parts = split(fd_version[2], '.')
-    if #version_parts ~= 3 then
-        return nil
-    end
-
-    return tonumber(version_parts[1]), tonumber(version_parts[2]), tonumber(version_parts[3])
+    return version.major, version.minor, version.minor
 end
 
-local major, minor, patch = get_fd_version()
+local major, minor, _patch = get_fd_version()
 if major ~= nil and minor ~= nil and major >= 8 and minor >= 3 then
     table.insert(fd_command, '--strip-cwd-prefix')
 end
