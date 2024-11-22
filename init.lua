@@ -29,6 +29,7 @@ require("config.lualine")
 require("config.bufferline")
 require("config.trouble")
 require("gitsigns").setup()
+require("blame").setup()
 
 -- Other mappings and specific configuration
 --require("config.ag")
@@ -197,7 +198,7 @@ vim.keymap.set('x', '<Leader>p', '"_dP', { noremap = true, silent = true })
 vim.keymap.set('n', '<Leader>d', '"_d', { noremap = true, silent = true })
 vim.keymap.set('v', '<Leader>d', '"_d', { noremap = true, silent = true })
 
-vim.keymap.set('n', '<Leader>vc', ':execute "!git blame -L " . eval((line(".")-5)) . ",+10 %"<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>vc', ':BlameToggle<CR>', { noremap = true, silent = true })
 
 -- Open the terminal with leader + Enter
 vim.keymap.set('n', '<Leader><CR>', ':terminal<CR>', { noremap = true, silent = true })

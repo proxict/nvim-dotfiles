@@ -95,3 +95,6 @@
 [submodule "bundle/gitsigns.nvim"]
 	path = bundle/gitsigns.nvim
 	url = https://github.com/lewis6991/gitsigns.nvim.git
+[submodule "bundle/blame.nvim"]
+	path = bundle/blame.nvim
+	url = https://github.com/FabijanZulj/blame.nvim.git
