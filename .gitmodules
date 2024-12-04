@@ -6,10 +6,6 @@
 	path = bundle/suda.vim
 	url = https://github.com/lambdalisue/suda.vim.git
 	ignore = untracked
-[submodule "bundle/vim-clang-format"]
-	path = bundle/vim-clang-format
-	url = https://github.com/rhysd/vim-clang-format.git
-	ignore = untracked
 [submodule "bundle/vim-wordmotion"]
 	path = bundle/vim-wordmotion
 	url = https://github.com/chaoren/vim-wordmotion.git
