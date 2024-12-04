@@ -100,3 +100,9 @@
 [submodule "bundle/image.nvim"]
 	path = bundle/image.nvim
 	url = https://github.com/3rd/image.nvim.git
+[submodule "bundle/vgit.nvim"]
+	path = bundle/vgit.nvim
+	url = https://github.com/tanvirtin/vgit.nvim.git
+[submodule "bundle/diffview.nvim"]
+	path = bundle/diffview.nvim
+	url = https://github.com/sindrets/diffview.nvim.git

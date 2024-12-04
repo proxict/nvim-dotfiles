@@ -28,10 +28,12 @@ require("config.echo-diagnostic")
 require("config.lualine")
 require("config.bufferline")
 require("config.trouble")
+require("config.vgit")
 require("gitsigns").setup()
 require("blame").setup()
 require("magick")
 require("image").setup()
+require("diffview").setup()
 
 -- Other mappings and specific configuration
 --require("config.ag")
