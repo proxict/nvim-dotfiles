@@ -30,6 +30,8 @@ require("config.bufferline")
 require("config.trouble")
 require("gitsigns").setup()
 require("blame").setup()
+require("magick")
+require("image").setup()
 
 -- Other mappings and specific configuration
 --require("config.ag")
