@@ -71,14 +71,14 @@ require("nvim-tree").setup({
                 },
             },
         },
-        special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+        special_files = {}, -- files listed here will be highlighted
         symlink_destination = true,
     },
     filters = {
         dotfiles = false,
         git_ignored = true,
-        custom = { '.git', '.gitmodules' },
-        exclude = { 'build', 'compile_flags.txt', 'compile_commands.json' },
+        custom = { '^.git$', '^.gitmodules$' },
+        exclude = { 'build', 'build_dir' },
     },
     git = {
         timeout = 2000,

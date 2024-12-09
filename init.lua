@@ -64,7 +64,7 @@ set.clipboard = 'unnamedplus'
 set.termguicolors = true
 
 set.wildignore = { '*.o', '*.a', '*.d', '*.so', '*.swp', '*.jpg', '*.png', '*.svg', '*.ttf', '*.pdf', '*.zip', '*.tar.gz', '*.bin' }
-set.wildignore = set.wildignore + { '*/CMakeFiles/*', '*/build/*', '*/googletest/*' }
+set.wildignore = set.wildignore + { '*/CMakeFiles/*', '*/build/*', '*/build_dir/*' }
 
 -- Add <> brackets to the list of matching pairs
 set.matchpairs:append('<:>')
