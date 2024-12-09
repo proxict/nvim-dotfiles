@@ -29,9 +29,8 @@ require("config.lualine")
 require("config.bufferline")
 require("config.trouble")
 require("config.gitsigns")
+require("config.image")
 require("blame").setup()
-require("magick")
-require("image").setup()
 require("diffview").setup()
 
 -- Other mappings and specific configuration
