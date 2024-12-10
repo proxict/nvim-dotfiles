@@ -201,6 +201,13 @@ vim.keymap.set('n', '<Leader>d', '"_d', { noremap = true, silent = true })
 vim.keymap.set('v', '<Leader>d', '"_d', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<Leader>vc', ':BlameToggle<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>vg', function()
+    if next(require('diffview.lib').views) == nil then
+        vim.cmd('DiffviewOpen')
+    else
+        vim.cmd('DiffviewClose')
+    end
+end, { noremap = true, silent = true })
 
 -- Open the terminal with leader + Enter
 vim.keymap.set('n', '<Leader><CR>', ':terminal<CR>', { noremap = true, silent = true })
