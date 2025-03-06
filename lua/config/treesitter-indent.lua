@@ -10,5 +10,5 @@ vim.keymap.set({"x", "o"}, "ii", "<Cmd>lua require'treesitter_indent_object.text
 vim.keymap.set({"x", "o"}, "iI", "<Cmd>lua require'treesitter_indent_object.textobj'.select_indent_inner(true)<CR>")
 
 -- Toggle whitespaces and indentation visibility
-vim.keymap.set('n', '<Leader>lw', ':set list!<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>lw', ':set list!<CR>', { silent = true, desc = "Toggle whitespaces" })
 
