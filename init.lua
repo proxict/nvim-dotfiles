@@ -32,6 +32,12 @@ require("config.gitsigns")
 require("config.image")
 require("blame").setup()
 require("diffview").setup()
+require("mini.icons").setup()
+require("which-key").setup({
+    ---@type false | "classic" | "modern" | "helix"
+    preset = "modern",
+    triggers = {},
+})
 
 -- Other mappings and specific configuration
 --require("config.ag")

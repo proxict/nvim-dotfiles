@@ -106,3 +106,9 @@
 [submodule "bundle/cmp-nvim-lsp-signature-help"]
 	path = bundle/cmp-nvim-lsp-signature-help
 	url = https://github.com/hrsh7th/cmp-nvim-lsp-signature-help.git
+[submodule "bundle/which-key.nvim"]
+	path = bundle/which-key.nvim
+	url = https://github.com/folke/which-key.nvim
+[submodule "bundle/mini.icons"]
+	path = bundle/mini.icons
+	url = https://github.com/echasnovski/mini.icons
