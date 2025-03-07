@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Thanks https://stackoverflow.com/a/17841619/3421618
-function join_by { local IFS="$1"; shift; echo "$*"; }
-
-[ $UID -ne 0 ] && echo "This script must be run as root" >&2 && exit 1
-
 command -v nvim &>/dev/null || { echo "Neovim ('nvim') doesn't seem to be installed" >&2 && exit 1; }
 command -v pip3 &>/dev/null || { echo "Python 'pip3' command doesn't seem to be installed" >&2 && exit 1; }
 pip3 freeze | grep -E '^pynvim=' &>/dev/null || { echo "python 'pynvim' package doesn't seem to be installed" >&2 && exit 1; }
@@ -12,7 +7,7 @@ pip3 freeze | grep -E '^pynvim=' &>/dev/null || { echo "python 'pynvim' package 
 if ! command -v fd &>/dev/null; then
     if command -v fdfind &>/dev/null && command -v update-alternatives &>/dev/null; then
         echo "Creating 'fd' alternative for fdfind..."
-        update-alternatives --install /usr/bin/fd fd /usr/bin/fdfind 1
+        sudo update-alternatives --install /usr/bin/fd fd /usr/bin/fdfind 1
     else
         echo "fdfind ('fd') doesn't seem to be installed" >&2
         exit 1
@@ -21,41 +16,3 @@ fi
 
 NVIM_VERSION=($(nvim --version | head -n1 | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+' | awk -F. '{print $1 " " $2 " " $3}'))
 [ "${NVIM_VERSION[1]}" -lt 8 ] && echo "nvim >= 0.9.0 is required for this configuration" && exit 1
-
-SCRIPT_DIR="$(readlink -f "$(dirname "${0}")")"
-RUNTIME_PATH="$(nvim -u NONE --headless -c "echo \$VIM" -c q 2>&1)"
-
-[ ! -d "${RUNTIME_PATH}" ] && echo "Failed to get \$VIM runtime path" >&2 && exit 1
-
-[ -L "${RUNTIME_PATH}/site" ] && [ ! -L "${RUNTIME_PATH}/site.bak" ] && mv "${RUNTIME_PATH}/site"{,.bak}
-[ ! -L "${RUNTIME_PATH}/site" ] && ln -s "${SCRIPT_DIR}" "${RUNTIME_PATH}/site"
-
-[ -f "${RUNTIME_PATH}/sysinit.vim" ] && [ ! -f "${RUNTIME_PATH}/sysinit.vim.bak" ] && mv "${RUNTIME_PATH}/sysinit."{vim,vim.bak}
-echo "source ${SCRIPT_DIR}/init.lua" > "${RUNTIME_PATH}/sysinit.vim"
-
-readarray -t relevant_users < <(getent passwd | awk -F: '!/(nologin|git|sync)/ {print $1}')
-getent group | awk -F: '{print $1}' | grep -E '^nvim$' &>/dev/null || groupadd nvim -U "$(join_by , "${relevant_users[@]}")"
-
-for user in "${relevant_users[@]}"; do
-    echo "Creating backup and swap directories for ${user}: $(sudo -u "${user}" bash -c 'echo "${HOME}/.nvim/"{backup,swap}')"
-    sudo -u "${user}" bash -c '[ -d "${HOME}" ] && mkdir -p "${HOME}/.nvim/"{backup,swap}'
-done
-
-chown -R root:root "${SCRIPT_DIR}"
-
-git submodule update --init --recursive
-nvim --headless -c "TSUpdate" -c q 2>&1; echo
-
-TREESITTER_PARSER_DIR="${SCRIPT_DIR}/bundle/nvim-treesitter/parser"
-TREESITTER_PARSER_INFO_DIR="${SCRIPT_DIR}/bundle/nvim-treesitter/parser-info"
-
-for dir in "${TREESITTER_PARSER_DIR}" "${TREESITTER_PARSER_INFO_DIR}"; do
-    if [ -d "${dir}" ]; then
-        chmod g+s "${dir}"
-        chmod 775 "${dir}"
-        chmod g+w "${dir}"/*
-        chown -R root:nvim "${dir}"
-    else
-        echo "tree-sitter '${dir}' directory not found"
-    fi
-done

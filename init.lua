@@ -1,56 +1,10 @@
-vim.g.pathogen_blacklist = {'ag.vim'}
-vim.cmd('execute pathogen#infect()')
+require("config.lazy")
 
 local set = vim.opt
-
--- disable netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 
 set.backupdir = vim.env.HOME .. '/.cache/nvim/backup//'
 set.directory = vim.env.HOME .. '/.cache/nvim/swap//'
 
--- Keep backward f search by remapping it to <Leader>;
-vim.g.mapleader = ','
-vim.keymap.set('n', '<Leader>;', ',', { noremap = true, silent = true })
-
--- Plugin settings
-require('config.cursorword')
-require('config.treesitter')
-require('config.nvim-tree')
-require('config.rustfmt')
-require('config.telescope')
-require('config.blankline')
-require("config.treesitter-indent")
-require("config.wordmotion")
-require("config.lsp-config")
-require("config.echo-diagnostic")
-require("config.lualine")
-require("config.bufferline")
-require("config.trouble")
-require("config.gitsigns")
-require("config.image")
-require("blame").setup()
-require("diffview").setup()
-require("mini.icons").setup()
-require("which-key").setup({
-    ---@type false | "classic" | "modern" | "helix"
-    preset = "modern",
-    triggers = {},
-})
-
--- Other mappings and specific configuration
---require("config.ag")
-require("config.esc")
-require('config.buffer-workflow')
-require("config.code-format")
-require("config.cppbuild")
-require("config.window-split")
-
---require('config.kanagawa')
-require('config.nordic')
-
--- Allow project specific settings
 set.exrc = true
 set.ignorecase = true
 set.smartcase = true
@@ -151,48 +105,6 @@ vim.api.nvim_create_autocmd('FileType', {
     callback = function() set.buflisted = false end
 })
 
-local function search_rg(raw, ...)
-    local args = {...}
-    if #args == 0 then
-        print("No arguments provided for the S command")
-        return
-    end
-
-    local rg_args = table.concat(args, " ")
-
-    local handle = raw and
-        io.popen("rg --color=never --no-heading --with-filename --column --smart-case --trim " .. rg_args) or
-        io.popen("rg --color=never --no-heading --with-filename --column --smart-case --trim '" .. rg_args .. "'")
-
-    local result = handle:read("*a")
-    handle:close()
-
-    local lines = {}
-    for line in result:gmatch("[^\r\n]+") do
-        table.insert(lines, line)
-    end
-
-    vim.fn.setqflist({}, 'r', {
-        title = 'Search results',
-        lines = lines,
-    })
-
-    vim.api.nvim_command('copen')
-end
-
--- Quick recursive search (escaped pattern)
-vim.api.nvim_create_user_command('S', function(opts)
-    search_rg(false, unpack(opts.fargs))
-end, { nargs = '*' })
-
--- Quick recursive search (raw, unescaped pattern, allowing passing additional flags to rg: `:Sr -g !tests/* mypattern`)
-vim.api.nvim_create_user_command('Sr', function(opts)
-    search_rg(true, unpack(opts.fargs))
-end, { nargs = '*' })
-
--- Suda plugin
-vim.cmd('command W w suda://%')
-
 -- vim magic search
 vim.keymap.set('n', '/', '/\\v', { noremap = true })
 vim.keymap.set('v', '/', '/\\v', { noremap = true })
@@ -205,15 +117,6 @@ vim.keymap.set('n', '#', '?\\C\\<<C-R>=expand(\'<cword>\')<CR>\\><CR>', { norema
 vim.keymap.set('x', '<Leader>p', '"_dP', { noremap = true, silent = true })
 vim.keymap.set('n', '<Leader>d', '"_d', { noremap = true, silent = true })
 vim.keymap.set('v', '<Leader>d', '"_d', { noremap = true, silent = true })
-
-vim.keymap.set('n', '<Leader>vc', ':BlameToggle<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<Leader>vg', function()
-    if next(require('diffview.lib').views) == nil then
-        vim.cmd('DiffviewOpen')
-    else
-        vim.cmd('DiffviewClose')
-    end
-end, { noremap = true, silent = true })
 
 -- Open the terminal with leader + Enter
 vim.keymap.set('n', '<Leader><CR>', ':terminal<CR>', { noremap = true, silent = true })

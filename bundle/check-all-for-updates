@@ -1,8 +1,0 @@
-#!/bin/bash
-
-for f in */; do
-    pushd "$f" > /dev/null && echo "Updating $f"
-    git branch | head -n1 | grep detached && { git checkout master || git checkout main; }
-    git pull
-    popd > /dev/null
-done
