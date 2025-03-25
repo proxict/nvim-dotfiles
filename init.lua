@@ -119,7 +119,7 @@ vim.keymap.set('n', '<Leader>d', '"_d', { noremap = true, silent = true })
 vim.keymap.set('v', '<Leader>d', '"_d', { noremap = true, silent = true })
 
 -- Open the terminal with leader + Enter
-vim.keymap.set('n', '<Leader><CR>', ':terminal<CR>', { noremap = true, silent = true })
+--vim.keymap.set('n', '<Leader><CR>', ':terminal<CR>', { noremap = true, silent = true })
 
 -- Press ESC in terminal to exit the terminal mode
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
