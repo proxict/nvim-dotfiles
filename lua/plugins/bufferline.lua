@@ -13,6 +13,13 @@ return {
                     local icon = level:match("error") and error_icon or warn_icon
                     return " " .. icon
                 end,
+                custom_filter = function(buf_number, buf_numbers)
+                    -- filter out terminal buffer type
+                    if vim.bo[buf_number].buftype ~= "terminal" then
+                        return true
+                    end
+                    return false
+                end,
             },
         })
 
