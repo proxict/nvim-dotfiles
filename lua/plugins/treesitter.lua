@@ -67,6 +67,7 @@ return {
             "scss",
             "sql",
             "toml",
+            "tsx",
             "typescript",
             "vim",
             "vimdoc",
