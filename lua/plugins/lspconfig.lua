@@ -1,21 +1,11 @@
 return {
     'neovim/nvim-lspconfig',
     config = function()
-        local lspconfig = require('lspconfig')
-
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
         capabilities.textDocument.completion.completionItem.snippetSupport = false
 
-        local servers = { 'clangd', 'rust_analyzer', 'bashls', 'pyright', 'cmake', 'ts_ls', 'zls' }
-        for _, lsp in ipairs(servers) do
-            lspconfig[lsp].setup {
-                on_attach = function(client)
-                    -- :help vim.lsp.semantic_tokens.start()
-                    client.server_capabilities.semanticTokensProvider = nil
-                end,
-                capabilities = capabilities,
-            }
-        end
+        vim.lsp.config('*', { capabilities = capabilities })
+        vim.lsp.enable({ 'clangd', 'rust_analyzer', 'bashls', 'pyright', 'cmake', 'ts_ls', 'zls' })
 
         -- Add rounded borders to floating windows
         local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
