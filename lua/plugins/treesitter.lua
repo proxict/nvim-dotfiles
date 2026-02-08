@@ -1,5 +1,6 @@
 return {
     'nvim-treesitter/nvim-treesitter',
+    version = '*',
     build = ":TSUpdate",
     event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
     lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
