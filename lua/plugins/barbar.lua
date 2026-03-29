@@ -9,11 +9,24 @@ return {
     init = function()
         vim.g.barbar_auto_setup = false
 
-        vim.keymap.set('n', 'H', ':BufferPrevious<CR>', { noremap = false, silent = true, desc = "Prev buffer" })
-        vim.keymap.set('n', 'L', ':BufferNext<CR>', { noremap = false, silent = true, desc = "Next buffer" })
-        vim.keymap.set('n', '<A-h>', ':BufferMovePrevious<CR>', { noremap = false, silent = true, desc = "Move buffer left" })
-        vim.keymap.set('n', '<A-l>', ':BufferMoveNext<CR>', { noremap = false, silent = true, desc = "Move buffer right" })
-        vim.keymap.set('n', '<Leader>bd', ':BufferClose<CR>', { noremap = false, silent = true, desc = "Close buffer" })
+        opts = { noremap = false, silent = true }
+
+        vim.keymap.set('n', 'H', ':BufferPrevious<CR>', opts)
+        vim.keymap.set('n', 'L', ':BufferNext<CR>', opts)
+        vim.keymap.set('n', '<A-h>', ':BufferMovePrevious<CR>', opts)
+        vim.keymap.set('n', '<A-l>', ':BufferMoveNext<CR>', opts)
+        vim.keymap.set('n', '<Leader>bd', ':BufferClose<CR>', opts)
+
+        vim.keymap.set('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
+        vim.keymap.set('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts)
+        vim.keymap.set('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', opts)
+        vim.keymap.set('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', opts)
+        vim.keymap.set('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', opts)
+        vim.keymap.set('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', opts)
+        vim.keymap.set('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', opts)
+        vim.keymap.set('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', opts)
+        vim.keymap.set('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts)
+        vim.keymap.set('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
     end,
     opts = {
         highlight_inactive_file_icons = true,
