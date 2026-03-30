@@ -40,6 +40,7 @@ local toggle_terminal = function()
         state.floating = create_floating_window({ buf = state.floating.buf })
         if vim.bo[state.floating.buf].buftype ~= "terminal" then
             vim.cmd.terminal()
+            vim.api.nvim_buf_set_option(state.floating.buf, 'buflisted', false)
         end
     else
         vim.api.nvim_win_hide(state.floating.win)
