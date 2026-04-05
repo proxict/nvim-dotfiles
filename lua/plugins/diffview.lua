@@ -1,5 +1,6 @@
 return {
     'sindrets/diffview.nvim',
+    version = '*',
     cmd = { "DiffviewClose", "DiffviewFileHistory", "DiffviewFocusFiles", "DiffviewLog", "DiffviewOpen", "DiffviewRefresh", "DiffviewToggleFiles" },
     keys = {
         {

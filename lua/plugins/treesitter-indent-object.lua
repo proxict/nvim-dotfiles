@@ -1,5 +1,6 @@
 return {
     "kiyoon/treesitter-indent-object.nvim",
+    version = '*',
     keys = {
         {
             "ai",

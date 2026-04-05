@@ -1,5 +1,6 @@
 return {
     'seblyng/nvim-echo-diagnostics',
+    version = '*',
     config = function()
         require("echo-diagnostics").setup({
             show_diagnostic_number = true,

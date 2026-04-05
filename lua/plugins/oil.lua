@@ -1,5 +1,6 @@
 return {
     'stevearc/oil.nvim',
+    version = '*',
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {},

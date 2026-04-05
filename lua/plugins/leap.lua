@@ -1,5 +1,6 @@
 return {
     url = "https://codeberg.org/andyg/leap.nvim",
+    version = '*',
     lazy = false,
     keys = {
         { "t", "<Plug>(leap-forward)", mode = { "n" }, desc = "Leap Forward", noremap = true, silent = true },
