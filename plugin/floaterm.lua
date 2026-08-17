@@ -27,7 +27,7 @@ local function create_floating_window(opts)
         height = height,
         col = col,
         row = row,
-        style = "minimal", -- bo borders or extra UI elements
+        style = "minimal", -- no borders or extra UI elements
         border = "rounded",
     }
 
