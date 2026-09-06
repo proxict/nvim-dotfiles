@@ -1,23 +1,10 @@
 return {
-    'nvim-treesitter/nvim-treesitter',
-    version = '*',
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
     build = ":TSUpdate",
-    event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
-    lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
-    init = function(plugin)
-        -- PERF: add nvim-treesitter queries to the rtp and it's custom query predicates early
-        -- This is needed because a bunch of plugins no longer `require("nvim-treesitter")`, which
-        -- no longer trigger the **nvim-treesitter** module to be loaded in time.
-        -- Luckily, the only things that those plugins need are the custom queries, which we make available
-        -- during startup.
-        require("lazy.core.loader").add_to_rtp(plugin)
-        require("nvim-treesitter.query_predicates")
-    end,
-    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-    opts_extend = { "ensure_installed" },
+
     opts = {
-        highlight = { enable = true },
-        indent = { enable = true },
         ensure_installed = {
             "awk",
             "bash",
@@ -77,14 +64,22 @@ return {
             "yaml",
             "zig",
         },
-        highlight = {
-            enable = true,
-            disable = { "" },
-        },
-        indent = { enable = false, disable = { "yaml", "php" } },
     },
-    ---@param opts TSConfig
+
     config = function(_, opts)
-        require("nvim-treesitter.configs").setup(opts)
+        require("nvim-treesitter").setup()
+
+        require("nvim-treesitter").install(opts.ensure_installed)
+
+        -- Automatically start treesitter highlighting for the installed langs
+        vim.api.nvim_create_autocmd("FileType", {
+            callback = function(args)
+                local lang = vim.treesitter.language.get_lang(args.match)
+
+                if lang and vim.treesitter.language.add(lang) then
+                    vim.treesitter.start(args.buf, lang)
+                end
+            end,
+        })
     end,
 }
